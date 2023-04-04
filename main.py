@@ -1,20 +1,20 @@
-# This is a sample Python script.
+class Student:
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def __init__(self, first_name, last_name, grades=[]):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.grades = grades
+
+    def add_grade(self, grade):
+        self.grades.append(grade)
+
+    def get_average(self):
+        return sum(self.grades) / len(self.grades)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-def add(a, b):
-    return a + b
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+someStudent = Student('qwe', 'erty')
+someOtherStudent = Student('asd', 'fgh')
+someStudent.add_grade(98)
+someOtherStudent.add_grade(77)
+print(someStudent.grades == [98, 77]) # Evaluates to True
+print(someOtherStudent.grades == [98, 77]) # Evaluates to True
